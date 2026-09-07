@@ -1,0 +1,17 @@
+{% extends 'todoapp/base.html' %}
+
+{% block base_content %}
+<div style="height: 50px"></div>
+<div class="TaskModal-overlay">
+    <div class="TaskModal-content">
+        <div class="TaskModal-header">
+            <h2>Регистрация прошла успешно!</h2>
+        </div>
+        <div class="TaskModal-description">
+            <p>Добро пожаловать в твой личный список дел!</p>
+            <p>Для входа в систему необходимо <a href="{% url 'users:login' %}">авторизоваться</a></p>
+        </div>
+    </div>  
+</div>
+<div style="height: 50px"></div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'todoapp/base.html' %}
+
+{% block base_content %}
+<div style="height: 50px"></div>
+<div class="TaskModal-overlay">
+    <div class="TaskModal-content">
+        <div class="TaskModal-header">
+            <h2>Авторизация</h2>
+        </div>
+        <div>
+            <form method="post">{% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}" />
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <div class="TaskModal-actions">
+                    <button type="button" class="btn-close" onclick="window.location.href='{% url 'users:password_reset' %}'">Забыли пароль?</button>
+                    <button type="submit" class="btn-save">Войти</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+</div>
+<div style="height: 50px"></div>
+{% endblock %}

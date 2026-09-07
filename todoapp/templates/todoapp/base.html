@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ToDo</title>
+        <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+        <link type='text/css' href="{% static 'todoapp/css/styles.css' %}" rel='stylesheet' />
+    </head>
+    <body>
+        <div class="page">
+
+            {% comment %} Шапка {% endcomment %}
+            <div class="header">
+                <div style="width: 500px"></div>
+                <div class="header-text" onclick="window.location.href='{% url 'first_category' %}'">ToDo list</div>
+                <div class="header-urls">
+                    {% if user.is_authenticated %}
+                    <span><a href="{% url 'users:profile' %}">Профиль</a> | <a href="{% url 'users:logout' %}">Выйти</a></span>
+                    {% else %}
+                    <span><a href="{% url 'users:login' %}">Войти</a> | <a href="{% url 'users:register' %}">Регистрация </a></span>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% comment %} Основное содержимое страницы {% endcomment %}
+            <div>
+                {% block base_content %} 
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

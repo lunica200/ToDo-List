@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>404 - Страница не найдена</title>
+        <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+        <link type='text/css' href="{% static 'todoapp/css/styles.css' %}" rel='stylesheet' />
+    </head>
+    <body>
+        <div style="height: 150px"></div>
+        <div class="TaskModal-overlay">
+            <div class="TaskModal-content">
+                <div class="TaskModal-header">
+                    <h2>Ошибка :(</h2>
+                </div>
+                <div class="TaskModal-description">
+                    <p>К сожалению, страницы, на которую Вы пытались перейти, не существует</p>
+                    <p>Нажмите <a href="{% url 'first_category' %}">сюда</a>, чтобы вернуться на главную страницу</p>
+                </div>
+            </div>  
+        </div>
+        <div style="height: 50px"></div>
+    </body>
+</html>
+
