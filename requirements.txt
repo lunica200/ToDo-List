@@ -1,7 +1,7 @@
 asgiref==3.12.1
 Django==6.1.1
 django-autoslug==1.9.9
-sqlparse=0.6.0
+sqlparse==0.6.0
 transliterate==1.10.2
 tzdata==2026.3
 whitenoise==6.12.0
