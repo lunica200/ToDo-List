@@ -1,4 +1,4 @@
-##Small pet-project to organize tasks
+## Small pet-project to organize tasks
 
 ### Installation
 
