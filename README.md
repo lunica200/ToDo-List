@@ -1,6 +1,11 @@
-## Small pet-project to organize tasks
+# Small pet-project to organize tasks
 
-### Installation
+## Preview
+![autorization](images/autorization.png)
+![main-screen](images/main_screen.png)
+![main-screen-with-tasks](images/main_screen_with_tasks.png)
+
+## Installation
 
 ```bash
 # 1. Clone the repository
