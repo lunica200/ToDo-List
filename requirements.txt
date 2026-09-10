@@ -5,3 +5,4 @@ sqlparse=0.6.0
 transliterate==1.10.2
 tzdata==2026.3
 whitenoise==6.12.0
+python-dotenv==1.2.3

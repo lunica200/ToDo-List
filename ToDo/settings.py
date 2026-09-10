@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 import os
 from pathlib import Path
 
-from decouple import Csv, config
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -135,15 +137,15 @@ MAILERS = {
             'host': 'smtp.mail.ru',
             'port': 465,
             'use_ssl': True,
-            'username': config('main_email'),
-            'password': config('email_password'),
+            'username': os.getenv('main_email'),
+            'password': os.getenv('email_password'),
         },
     },
 }
 
-DEFAULT_FROM_EMAIL = config('main_email')
-SERVER_EMAIL = config('main_email')
-EMAIL_ADMIN = config('main_email')
+DEFAULT_FROM_EMAIL = os.getenv('main_email')
+SERVER_EMAIL = os.getenv('main_email')
+EMAIL_ADMIN = os.getenv('main_email')
 
 # Авторизация
 LOGIN_REDIRECT_URL = 'first_category'
