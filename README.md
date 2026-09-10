@@ -1,3 +1,5 @@
+##Small pet-project to organize tasks
+
 ### Installation
 
 ```bash
